@@ -1,0 +1,8 @@
+<a href="{% url 'prof_page' %}">Main page</a>
+<h2>Edit status</h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}<br>
+    <input type="submit" value="Promijeni status">
+</form>

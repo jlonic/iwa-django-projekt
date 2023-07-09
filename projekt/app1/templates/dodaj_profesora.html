@@ -1,0 +1,19 @@
+<a href="{% url 'admin_page' %}">Main page</a>
+<h2>Dodaj profesora</h2>
+
+<form method="POST">
+    {% for field in form %}
+    <div>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}    
+        {% endif %}
+    {% endfor %}
+
+    {% csrf_token %}
+
+    <br><button type="submit">Dodaj profesora</button>
+</form>

@@ -1,0 +1,33 @@
+<a href="{% url 'admin_page' %}">Main page</a>
+<h2>O predmetu</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Kod</th>
+        <th>Ime</th>
+        <th>Program</th>
+        <th>Bodovi</th>
+        <th>Redovni</th>
+        <th>Izvanredni</th>
+        <th>Izborni</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in predmet %}
+    <tr>
+        <th>{{p.kod}}</th>
+        <td>{{p}}</td>
+        <td>{{p.program}}</td>
+        <td>{{p.bodovi}}</td>
+        <td>{{p.sem_red}}sem</td>
+        <td>{{p.sem_izv}}sem</td>
+        <td>{{p.izborni}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<h4>Ovaj predmet je upisalo {{broj_studenata}} studenata</h4>
+{% for ime in ime_studenta %}
+    {{ime}}<br>
+{% endfor %}

@@ -1,0 +1,6 @@
+<a href="{% url 'prof_page' %}">Main page</a>
+<h2>O predmetu</h2>
+<h4>Ovaj predmet je upisalo {{broj_studenata}} studenata</h4>
+{% for ime in ime_studenta %}
+<a href="{% url 'promijeni_status' ime.id predmet_id %}">{{ime}}<br>
+{% endfor %}

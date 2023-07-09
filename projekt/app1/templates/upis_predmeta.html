@@ -1,0 +1,20 @@
+<a href="{% url 'student_page' %}">Main page</a>
+<h1>Upis predmeta</h1>
+
+<form method="POST">
+    {% for field in form %}
+    <div>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+        {% for error in field.errors %}
+            {{ error }}
+        {% endfor %}    
+    {% endif %}
+    </div>
+    {% endfor %}
+
+    {% csrf_token %}
+
+    <br><button type="submit">Upisi predmet</button>
+</form>

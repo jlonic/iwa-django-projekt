@@ -1,0 +1,19 @@
+<h1>ADMIN MAIN PAGE</h1>
+
+<a href="{% url 'lista_predmeta' %}">Lista predmeta</a>
+<a href="{% url 'lista_profesora' %}">Lista profesora</a>
+<a href="{% url 'lista_studenta' %}">Lista studenta</a>
+<br>
+<a href="{% url 'dodaj_predmet' %}">Dodaj predmet</a>
+<a href="{% url 'dodaj_profesora' %}">Dodaj profesora</a>
+<a href="{% url 'dodaj_studenta' %}">Dodaj studenta</a>
+<br>
+<a href="{% url 'upisni_list' %}">Upisni list</a>
+<a href="{% url 'ispis' %}">Ispisi studenta s predmeta</a>
+
+
+<br><br>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

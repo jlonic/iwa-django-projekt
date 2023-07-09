@@ -1,0 +1,10 @@
+<h1>STUDENT MAIN PAGE</h1>
+
+<a href="{% url 'upis_predmeta' %}">Upis predmeta</a>
+<a href="{% url 'ispis_predmeta' %}">Ispis predmeta</a>
+
+<br><br>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

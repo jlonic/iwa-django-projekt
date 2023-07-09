@@ -1,0 +1,8 @@
+<a href="{% url 'admin_page' %}">Main page</a>
+<h2>Edit profesor</h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}<br>
+    <input type="submit" value="Edit">
+</form>

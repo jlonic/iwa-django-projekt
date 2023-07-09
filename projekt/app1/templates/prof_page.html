@@ -1,0 +1,26 @@
+<h1>PROFESOR MAIN PAGE</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Kod</th>
+        <th>Ime</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for p in predmeti %}
+        <tr>
+            <th>{{p.kod}}</th>
+            <td><a href="{% url 'studenti_na_predmetu' p.id %}">{{p}}</a></td>
+            <td><a href="{% url 'izgubili_potpis' p.id %}">Izgubili potpis</a></td>
+            <td><a href="{% url 'dobili_potpis' p.id %}">Dobili potpis</a></td>
+            <td><a href="{% url 'polozili_predmet' p.id %}">Polozili predmet</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+<br>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

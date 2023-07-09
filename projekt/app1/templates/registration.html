@@ -1,0 +1,20 @@
+<h1>Registracija</h1>
+
+<form method="POST">
+    {% for field in form %}
+    <div>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+        {% for error in field.errors %}
+            {{ error }}
+        {% endfor %}    
+    {% endif %}
+    </div>
+    {% endfor %}
+
+    {% csrf_token %}
+
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'login' %}">Login</a>

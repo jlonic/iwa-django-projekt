@@ -1,0 +1,28 @@
+<a href="{% url 'admin_page' %}">Main page</a>
+<h2>Lista profesora</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in profesori %}
+    {% if p.role == 'PROFESOR' %}
+    <tr>
+        <th>{{p.id}}</th>
+        <td>{{p}}</td>
+        <td><a href="{% url 'edit_profesor' p.id %}">Edit</a></td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

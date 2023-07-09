@@ -1,0 +1,7 @@
+<a href="{% url 'prof_page' %}">Main page</a>
+<h1>Polozili predmet</h1>
+
+<p>{{broj_studenata}} studenata je polozilo predmet</p> 
+{% for s in studenti %}
+<p><a href="{% url 'promijeni_status' s.id predmet_id %}">{{s}}</a></p>
+{%endfor%}
